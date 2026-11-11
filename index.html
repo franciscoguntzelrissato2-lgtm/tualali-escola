@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tualali Escola</title>
+<meta name="description" content="Livros, cadernos e provas no computador de cada aluno, com o Modo Aula do Tualali OS.">
+<style>
+:root{--fundo:#0e1624;--cartao:#16233a;--borda:#24375a;--texto:#e8eef7;--suave:#9fb0c8;--teal:#2ec4b6;--coral:#ff8a65}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fundo);color:var(--texto);font:17px/1.6 "Noto Sans",system-ui,-apple-system,"Segoe UI",sans-serif}
+a{color:var(--teal)}
+.topo{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;max-width:1100px;margin:0 auto;padding:18px 16px}
+.marca{display:flex;align-items:center;gap:10px;font-size:21px;color:var(--texto);text-decoration:none}
+.logo{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--teal),var(--coral));color:#fff;font-weight:800}
+.botao{display:inline-block;padding:11px 20px;border-radius:12px;background:var(--teal);color:#06231f;font-weight:700;text-decoration:none;border:0}
+.botao.sec{background:transparent;color:var(--texto);border:1px solid var(--borda)}
+.botao[aria-disabled=true]{opacity:.55;pointer-events:none}
+.hero{max-width:1100px;margin:0 auto;padding:50px 16px 30px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+h1{font-size:clamp(34px,5vw,54px);line-height:1.1;margin:0 0 16px}
+h1 em{font-style:normal;background:linear-gradient(90deg,var(--teal),var(--coral));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--suave);font-size:19px;max-width:560px}
+.acoes{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.tela{background:var(--cartao);border:1px solid var(--borda);border-radius:18px;padding:16px;box-shadow:0 30px 60px #0006}
+.abas{display:flex;gap:8px;margin-bottom:12px}.abas span{padding:8px 14px;border-radius:10px;background:#0b1320;font-size:15px}.abas .on{background:var(--teal);color:#06231f;font-weight:700}
+.livros{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.capa{height:110px;border-radius:10px;background:linear-gradient(135deg,#1d3d63,var(--teal));display:grid;place-items:center;font-size:34px}
+section{max-width:1100px;margin:0 auto;padding:40px 16px}
+h2{font-size:28px;margin:0 0 18px}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.cartao{background:var(--cartao);border:1px solid var(--borda);border-radius:16px;padding:20px}
+.cartao h3{margin:6px 0 6px;font-size:20px}.cartao p{margin:0;color:var(--suave)}
+.icone{font-size:30px}
+.passos{counter-reset:p;display:grid;gap:14px}
+.passo{display:flex;gap:16px;align-items:flex-start}.passo::before{counter-increment:p;content:counter(p);flex:0 0 40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--teal);color:#06231f;font-weight:800}
+.passo b{display:block}
+.areas .botao{margin-top:14px}
+.aviso{color:var(--suave);font-size:15px;margin-top:10px}
+footer{max-width:1100px;margin:30px auto 0;padding:24px 16px 40px;color:var(--suave);font-size:14px;border-top:1px solid var(--borda)}
+@media(max-width:800px){.hero{grid-template-columns:1fr;padding-top:20px}.livros{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<header class="topo">
+  <a class="marca" href="#"><span class="logo">T.</span> Tualali <b>Escola</b></a>
+  <a class="botao sec entrar" data-area="adm" href="#">Entrar</a>
+</header>
+
+<div class="hero">
+  <div>
+    <h1>O computador vira <em>material escolar</em> na hora da aula.</h1>
+    <p class="sub">Com o Tualali OS, o aluno passa o computador pelo aparelho da sala e ficam abertos só o
+      <b>Livro</b>, o <b>Caderno</b> e as <b>Atividades</b>. Passou de novo, tudo volta ao normal.</p>
+    <div class="acoes">
+      <a class="botao entrar" data-area="adm/cadastro" href="#">Cadastrar minha escola</a>
+      <a class="botao sec" href="#como">Como funciona</a>
+    </div>
+    <p class="aviso" id="embreve" hidden>A plataforma está em fase de testes e abre em breve.</p>
+  </div>
+  <div class="tela" aria-label="Exemplo da Área do Estudante">
+    <div class="abas"><span class="on">📘 Livro</span><span>📒 Caderno</span><span>📝 Atividades</span></div>
+    <div class="livros">
+      <div><div class="capa">📐</div><small>Matemática</small></div>
+      <div><div class="capa">🌱</div><small>Ciências</small></div>
+      <div><div class="capa">📖</div><small>Português</small></div>
+    </div>
+  </div>
+</div>
+
+<section id="como">
+  <h2>Como funciona</h2>
+  <div class="passos">
+    <div class="passo"><div><b>Cada aluno tem o próprio computador com Tualali OS.</b>Funciona até em Macs e PCs antigos, de 2009 em diante.</div></div>
+    <div class="passo"><div><b>Na sala fica um beacon Bluetooth.</b>É um aparelho pequeno e barato. O computador percebe quando passa perto dele.</div></div>
+    <div class="passo"><div><b>1ª passada: Modo Aula.</b>Ficam só Livro, Caderno e Atividades, em tela cheia, sem distrações.</div></div>
+    <div class="passo"><div><b>2ª passada: tudo liberado.</b>O contador zera e há proteção contra passar duas vezes sem querer.</div></div>
+    <div class="passo"><div><b>Início e fim de semestre automáticos.</b>Em 31/07 e 01/01 os alunos saem das salas. Quando chegam de novo, a escola escolhe a sala nova em poucos cliques.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>Uma plataforma, quatro áreas</h2>
+  <div class="grade areas">
+    <div class="cartao"><div class="icone">🏫</div><h3>Administração</h3><p>Salas, horários, alunos, professores, computadores e beacons. Só os administradores criam contas de professor.</p>
+      <a class="botao sec entrar" data-area="adm" href="#">Entrar</a></div>
+    <div class="cartao"><div class="icone">👩‍🏫</div><h3>Professores</h3><p>Salas, ocorrências e provas com respostas escritas, de alternativa (corrigidas sozinhas) ou de desenho.</p>
+      <a class="botao sec entrar" data-area="professores" href="#">Entrar</a></div>
+    <div class="cartao"><div class="icone">📚</div><h3>Editoras</h3><p>Publiquem livros digitais. Cada escola escolhe quais livros cada sala usa.</p>
+      <a class="botao sec entrar" data-area="editora" href="#">Entrar</a></div>
+    <div class="cartao"><div class="icone">🎒</div><h3>Estudantes</h3><p>Área do Estudante no próprio computador: leitor de livros, caderno que salva sozinho e atividades.</p></div>
+  </div>
+</section>
+
+<section>
+  <h2>Feito para escolas brasileiras</h2>
+  <div class="grade">
+    <div class="cartao"><h3>Sistema gratuito</h3><p>Tualali OS é baseado em Debian Linux, com atualizações automáticas e assinadas.</p></div>
+    <div class="cartao"><h3>Cada escola separada</h3><p>Uma escola nunca vê os dados de outra. As senhas são guardadas protegidas.</p></div>
+    <div class="cartao"><h3>Funciona sem internet</h3><p>O Modo Aula liga e desliga mesmo com a rede fora do ar.</p></div>
+  </div>
+</section>
+
+<footer>Tualali Escola · Tualali OS · Plataforma em testes.</footer>
+
+<script src="config.js"></script>
+<script>
+var base = (window.TUALALI_PLATAFORMA || "").replace(/\/$/, "");
+document.querySelectorAll(".entrar").forEach(function (a) {
+  if (base) { a.href = base + "/" + a.dataset.area + (a.dataset.area.indexOf("/") < 0 ? "/entrar" : ""); }
+  else { a.setAttribute("aria-disabled", "true"); a.title = "Em breve"; }
+});
+if (!base) document.getElementById("embreve").hidden = false;
+</script>
+</body>
+</html>
